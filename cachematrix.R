@@ -1,8 +1,9 @@
-## Put comments here that give an overall description of what your
+## Matrix inversion is usually a costly computation and there may be some 
 ## benefit to caching the inverse of a matrix rather than compute it repeatedly 
 ## (there are also alternatives to matrix inversion that we will not discuss here). 
 Y## our assignment is to write a pair of functions that cache the inverse of a matrix.
 
+## This function, makeVector creates a special "vector", which is really a list containing a function to
 ## 1- set the value of the vector
 ## 2- get the value of the vector
 ## 3- set the value of the mean
@@ -14,6 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     m <<- NULL
   }
+  get <- function() x
   setsolve <- function(solve) m <<- solve
   getsolve <- function() m
   list(set = set, get = get,
